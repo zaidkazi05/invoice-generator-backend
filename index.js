@@ -15,12 +15,24 @@ const emailRoutes = require('./routes/email-routes');
 
 app.use(express.json());
 
+// app.use(
+//     cors({
+//         credentials: true,
+//         origin: ['https://invoice-generator-backend-nx8n.onrender.com/'],
+//         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+//     })
+// );
+
 app.use(
-    cors({
-        credentials: true,
-        origin: ['https://invoice-generator-backend-nx8n.onrender.com/'],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    })
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://invoice-generator-frontend-kappa.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
 );
 
 app.use('/auth', authRoutes);
