@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(
     cors({
         credentials: true,
-        origin: ['http://localhost:5173', 'https://invoice-generator-backend-nx8n.onrender.com/'],
+        origin: ['https://invoice-generator-backend-nx8n.onrender.com/'],
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     })
 );
